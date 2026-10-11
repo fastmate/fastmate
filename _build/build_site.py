@@ -201,7 +201,7 @@ f'''<section class="hero">
         <ul>
           <li>Everything in Free</li>
           <li><strong>Full “Most likely to move” list</strong> with reasons</li>
-          <li><strong>Unlimited search extraction</strong> — no daily limit, up to 100 per run</li>
+          <li><strong>Unlimited search extraction</strong> — no daily limit, 50 profiles per run</li>
           <li><strong>Current position, company &amp; total experience</strong> right in search results</li>
           <li><strong>Unlimited projects</strong></li>
         </ul>
