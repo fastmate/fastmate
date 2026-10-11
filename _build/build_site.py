@@ -5,7 +5,7 @@ UPDATED = 'October 11, 2026'
 def header(p):
     return f'''<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{p}index.html"><img class="mark" src="{p}assets/fastmate-mark.svg" alt=""><span>Fast<span class="accent">Mate</span></span></a>
+    <a class="brand" href="{p}index.html"><img class="logo" src="{p}assets/fastmate-logo.png" alt="FastMate"></a>
     <nav class="nav">
       <a href="{p}index.html#products">Products</a>
       <a href="{p}hiremate/">HireMate</a>
@@ -21,7 +21,7 @@ def footer(p):
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="{p}index.html"><img class="mark" src="{p}assets/fastmate-mark.svg" alt=""><span>Fast<span class="accent">Mate</span></span></a>
+        <a class="brand" href="{p}index.html"><img class="logo" src="{p}assets/fastmate-logo.png" alt="FastMate"></a>
         <p class="muted" style="max-width:320px;margin:10px 0 0">Small, focused tools that help people work faster.</p>
       </div>
       <div class="footer-links">
@@ -44,7 +44,8 @@ def page(path, title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="icon" href="{p}assets/fastmate-mark.svg" type="image/svg+xml">
+<link rel="icon" href="{p}assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="{p}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="{p}assets/style.css">
@@ -101,7 +102,7 @@ f'''<section class="hero">
         <div class="links"><a class="btn btn-primary btn-sm" href="hiremate/">Learn more</a><a class="btn btn-ghost btn-sm" href="hiremate/#pricing">Pricing</a></div>
       </div>
       <div class="card product soon">
-        <div class="logo-row"><img src="assets/fastmate-mark.svg" alt=""><div><h3>Next product</h3><span class="tag">Coming soon</span></div></div>
+        <div class="logo-row"><img src="assets/fastmate-mark.png" alt=""><div><h3>Next product</h3><span class="tag">Coming soon</span></div></div>
         <p>We are building more small tools for everyday professional work. Want to hear first? Drop us a line.</p>
         <div class="links"><a class="btn btn-ghost btn-sm" href="contact.html">Get notified</a></div>
       </div>

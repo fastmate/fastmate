@@ -23,6 +23,8 @@ img { max-width: 100%; display: block; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--ink); letter-spacing: -.01em; }
 .brand:hover { text-decoration: none; }
 .brand .mark { width: 34px; height: 34px; }
+.brand .logo { height: 38px; width: auto; display: block; }
+.site-footer .brand .logo { height: 30px; }
 .brand .accent { color: var(--green); }
 .nav { display: flex; gap: 22px; margin-left: auto; align-items: center; }
 .nav a { color: var(--ink-2); font-weight: 500; font-size: 15px; }
