@@ -206,7 +206,7 @@ f'''<section class="hero">
           <li><strong>Current position, company &amp; total experience</strong> right in search results</li>
           <li><strong>Unlimited projects</strong></li>
         </ul>
-        <a class="btn btn-green" href="https://fastmate.lemonsqueezy.com/checkout/buy/819b546a-231c-4c11-addf-9e32a6be1dc6" target="_blank" rel="noopener">Get Premium</a>
+        <a class="btn btn-green" href="https://fastmate.lemonsqueezy.com/checkout/buy/b649a58d-00c4-41a0-ad82-a3b9c0660f90" target="_blank" rel="noopener">Get Premium</a>
       </div>
     </div>
     <p class="billing-note muted">Prices in USD; taxes may apply. Cancel anytime. Secure checkout by Lemon Squeezy.</p>
