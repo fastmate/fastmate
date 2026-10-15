@@ -5,7 +5,7 @@ UPDATED_VI = '15/10/2026'
 
 # Two language editions: English at the root (global products: HireMate), Vietnamese under /vi/ (VNeInvoiceMate,
 # Vietnam only). VNeInvoiceMate never appears in the English edition.
-VNI_CHECKOUT = 'https://fastmate.lemonsqueezy.com/checkout/buy/6c047bd1-1929-4b41-bdfd-475a2a08d3c4'
+VNI_CHECKOUT = 'https://fastmate.lemonsqueezy.com/checkout/buy/e2bd491d-acda-4799-8593-6019b564d2b3'
 VNI_STORE = '#'  # Chrome Web Store link once published
 
 def header(p, lang='en', alt=None):
