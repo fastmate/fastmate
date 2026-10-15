@@ -1,8 +1,28 @@
 import io, os, sys
 OUT = sys.argv[1]
 UPDATED = 'October 11, 2026'
+UPDATED_VI = '15/10/2026'
 
-def header(p):
+# Two language editions: English at the root (global products: HireMate), Vietnamese under /vi/ (VNeInvoiceMate,
+# Vietnam only). VNeInvoiceMate never appears in the English edition.
+VNI_CHECKOUT = 'https://fastmate.lemonsqueezy.com/checkout/buy/6c047bd1-1929-4b41-bdfd-475a2a08d3c4'
+VNI_STORE = '#'  # Chrome Web Store link once published
+
+def header(p, lang='en', alt=None):
+    if lang == 'vi':
+        return f'''<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{p}vi/index.html"><img class="logo" src="{p}assets/fastmate-logo.png" alt="FastMate"></a>
+    <nav class="nav">
+      <a href="{p}vi/index.html#san-pham">Sản phẩm</a>
+      <a href="{p}vi/vneinvoicemate/">VNeInvoiceMate</a>
+      <a href="{p}vi/vneinvoicemate/#bang-gia">Bảng giá</a>
+      <a href="{p}vi/contact.html">Liên hệ</a>
+      <a class="lang" href="{p}{alt or 'index.html'}" hreflang="en" lang="en">English</a>
+      <a class="btn btn-primary btn-sm" href="{VNI_STORE}">Thêm vào Chrome</a>
+    </nav>
+  </div>
+</header>'''
     return f'''<header class="site-header">
   <div class="wrap">
     <a class="brand" href="{p}index.html"><img class="logo" src="{p}assets/fastmate-logo.png" alt="FastMate"></a>
@@ -11,12 +31,30 @@ def header(p):
       <a href="{p}hiremate/">HireMate</a>
       <a href="{p}hiremate/#pricing">Pricing</a>
       <a href="{p}contact.html">Contact</a>
+      <a class="lang" href="{p}{alt or 'vi/index.html'}" hreflang="vi" lang="vi">Tiếng Việt</a>
       <a class="btn btn-primary btn-sm" href="#">Add to Chrome</a>
     </nav>
   </div>
 </header>'''
 
-def footer(p):
+def footer(p, lang='en'):
+    if lang == 'vi':
+        return f'''<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="{p}vi/index.html"><img class="logo" src="{p}assets/fastmate-logo.png" alt="FastMate"></a>
+        <p class="muted" style="max-width:320px;margin:10px 0 0">Những công cụ nhỏ giúp bạn làm việc nhanh hơn.</p>
+      </div>
+      <div class="footer-links">
+        <div><strong>Sản phẩm</strong><a href="{p}vi/vneinvoicemate/">VNeInvoiceMate</a><a href="{p}vi/vneinvoicemate/#bang-gia">Bảng giá</a></div>
+        <div><strong>Pháp lý</strong><a href="{p}vi/privacy.html">Chính sách quyền riêng tư</a><a href="{p}vi/terms.html">Điều khoản sử dụng</a><a href="{p}vi/refund.html">Chính sách hoàn tiền</a></div>
+        <div><strong>FastMate</strong><a href="{p}vi/contact.html">Liên hệ</a><a href="mailto:fastmate.support@gmail.com">fastmate.support@gmail.com</a></div>
+      </div>
+    </div>
+    <p class="disclaimer">© 2026 FastMate. VNeInvoiceMate là sản phẩm độc lập, không liên kết với Tổng cục Thuế hay Bộ Tài chính. Thanh toán do Lemon Squeezy (đơn vị bán hàng chính thức — merchant of record) xử lý.</p>
+  </div>
+</footer>'''
     return f'''<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -34,16 +72,23 @@ def footer(p):
   </div>
 </footer>'''
 
-def page(path, title, desc, body):
+SITE = 'https://fastmate.github.io/fastmate/'
+
+def page(path, title, desc, body, lang='en', alt=None):
+    # alt: the same page in the other language (path from the site root), for the language switch and hreflang
     depth = path.count('/')
     p = '../' * depth
+    canon = lambda x: SITE + x.replace('index.html', '')
+    hreflang = ''
+    if alt:
+        hreflang = f'\n<link rel="alternate" hreflang="{lang}" href="{canon(path)}">\n<link rel="alternate" hreflang="{"en" if lang == "vi" else "vi"}" href="{canon(alt)}">'
     html = f'''<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="{desc}">
+<meta name="description" content="{desc}">{hreflang}
 <link rel="icon" href="{p}assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="{p}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,11 +96,11 @@ def page(path, title, desc, body):
 <link rel="stylesheet" href="{p}assets/style.css">
 </head>
 <body>
-{header(p)}
+{header(p, lang, alt)}
 <main>
 {body.replace('{P}', p)}
 </main>
-{footer(p)}
+{footer(p, lang)}
 </body>
 </html>
 '''
@@ -119,7 +164,7 @@ f'''<section class="hero">
       <div class="card"><div class="icon">{ICON['chart']}</div><h3>Useful insight</h3><p>Not just data in, data out — each tool helps you see what matters and decide faster.</p></div>
     </div>
   </div>
-</section>''')
+</section>''', alt='vi/index.html')
 
 # ---------------- HireMate product page ----------------
 page('hiremate/index.html', 'HireMate — Export LinkedIn™ profiles to Excel & manage your talent pool',
@@ -257,7 +302,7 @@ f'''<section class="hero">
 
 # ---------------- Legal ----------------
 def legal(path, title, desc, inner):
-    page(path, title + ' — FastMate', desc, f'<article class="legal"><h1>{title}</h1><p class="updated">Last updated: {UPDATED}</p>{inner}</article>')
+    page(path, title + ' — FastMate', desc, f'<article class="legal"><h1>{title}</h1><p class="updated">Last updated: {UPDATED}</p>{inner}</article>', alt='vi/' + path)
 
 legal('privacy.html', 'Privacy Policy', 'How FastMate and HireMate handle your data.', '''
 <p>This policy explains how FastMate (“we”, “us”), operated by Fast Mate, handles information in our products, including the HireMate Chrome extension, and on this website.</p>
@@ -326,7 +371,7 @@ legal('refund.html', 'Refund Policy', 'Refund policy for HireMate Premium.', '''
 <h2>How refunds are paid</h2>
 <p>Refunds are processed by Lemon Squeezy, our merchant of record, to your original payment method. Depending on your bank, it can take 5–10 business days to appear.</p>''')
 
-page('contact.html', 'Contact — FastMate', 'Contact FastMate.', '''
+page('contact.html', 'Contact — FastMate', 'Contact FastMate.', alt='vi/contact.html', body='''
 <article class="legal">
   <h1>Contact us</h1>
   <p class="updated">We usually reply within 1–2 business days.</p>
@@ -336,5 +381,7 @@ page('contact.html', 'Contact — FastMate', 'Contact FastMate.', '''
   </div>
   <p class="note" style="margin-top:24px">Operated by Fast Mate.</p>
 </article>''')
+
+exec(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_vi.py'), encoding='utf-8').read())
 
 print('built')

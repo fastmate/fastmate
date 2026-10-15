@@ -30,6 +30,8 @@ img { max-width: 100%; display: block; }
 .nav a { color: var(--ink-2); font-weight: 500; font-size: 15px; }
 .nav a:hover { color: var(--blue); text-decoration: none; }
 .nav a.btn-primary, .nav a.btn-primary:hover { color: #fff; }
+.nav a.lang { font-size: 13px; font-weight: 600; padding: 4px 10px; border: 1.5px solid var(--line); border-radius: 999px; }
+.nav a.lang:hover { border-color: var(--blue); }
 
 /* Buttons */
 .btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1px solid transparent; cursor: pointer; transition: background .15s, box-shadow .15s; }
@@ -136,6 +138,8 @@ h3 { font-size: 19px; margin: 0 0 6px; }
 @media (max-width: 860px) {
   .hero-grid, .grid-3, .grid-2, .pricing { grid-template-columns: 1fr; }
   .nav a:not(.btn) { display: none; }
+  .nav a.lang:not(.btn) { display: inline-block; }
   section { padding: 56px 0; }
   .cta { padding: 32px; }
 }
+html[lang="vi"] .plan.featured::before { content: "Phổ biến nhất"; }
