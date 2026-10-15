@@ -141,7 +141,7 @@ f'''<section class="hero">
         <a class="btn btn-green" href="{VNI_CHECKOUT}" target="_blank" rel="noopener">Mua Premium</a>
       </div>
     </div>
-    <p class="billing-note muted">Giá tính bằng USD, thanh toán bằng thẻ; ngân hàng quy đổi sang VND theo tỷ giá của ngân hàng. Một license key dùng trên 2 máy. Hủy gia hạn bất cứ lúc nào. Thanh toán an toàn qua Lemon Squeezy.</p>
+    <p class="billing-note muted">Giá tính bằng USD, thanh toán bằng thẻ; ngân hàng quy đổi sang VND theo tỷ giá của ngân hàng. Hủy gia hạn bất cứ lúc nào. Thanh toán an toàn qua Lemon Squeezy.</p>
   </div>
 </section>
 <script>
