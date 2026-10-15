@@ -35,9 +35,9 @@ f'''<section class="hero">
         <div class="links"><a class="btn btn-primary btn-sm" href="vneinvoicemate/">Tìm hiểu thêm</a><a class="btn btn-ghost btn-sm" href="vneinvoicemate/#bang-gia">Bảng giá</a></div>
       </div>
       <div class="card product">
-        <div class="logo-row"><img src="{{P}}assets/hiremate-icon.png" alt=""><div><h3>HireMate</h3><span class="tag">Tiếng Anh · cho tuyển dụng</span></div></div>
+        <div class="logo-row"><img src="{{P}}assets/hiremate-icon.png" alt=""><div><h3>HireMate</h3><span class="tag">Dành cho tuyển dụng</span></div></div>
         <p>Tiện ích Chrome cho nhân sự tuyển dụng: lưu hồ sơ ứng viên đang xem thành danh sách Excel và quản lý nguồn ứng viên.</p>
-        <div class="links"><a class="btn btn-ghost btn-sm" href="{{P}}hiremate/" hreflang="en">Xem (tiếng Anh)</a></div>
+        <div class="links"><a class="btn btn-primary btn-sm" href="{{P}}hiremate/" hreflang="en">Tìm hiểu thêm</a><a class="btn btn-ghost btn-sm" href="{{P}}hiremate/#pricing" hreflang="en">Bảng giá</a></div>
       </div>
     </div>
   </div>
