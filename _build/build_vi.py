@@ -37,7 +37,7 @@ f'''<section class="hero">
       <div class="card product">
         <div class="logo-row"><img src="{{P}}assets/hiremate-icon.png" alt=""><div><h3>HireMate</h3><span class="tag">Dành cho tuyển dụng</span></div></div>
         <p>Tiện ích Chrome cho nhân sự tuyển dụng: lưu hồ sơ ứng viên đang xem thành danh sách Excel và quản lý nguồn ứng viên.</p>
-        <div class="links"><a class="btn btn-primary btn-sm" href="{{P}}hiremate/" hreflang="en">Tìm hiểu thêm</a><a class="btn btn-ghost btn-sm" href="{{P}}hiremate/#pricing" hreflang="en">Bảng giá</a></div>
+        <div class="links"><a class="btn btn-primary btn-sm" href="hiremate/">Tìm hiểu thêm</a><a class="btn btn-ghost btn-sm" href="hiremate/#bang-gia">Bảng giá</a></div>
       </div>
     </div>
   </div>
@@ -187,6 +187,8 @@ f'''<section class="hero">
     </div>
   </div>
 </section>''', lang='vi')
+
+exec(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_vi_hiremate.py'), encoding='utf-8').read())
 
 # ---------------- Pháp lý ----------------
 def legal_vi(path, title, desc, inner, alt):

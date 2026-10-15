@@ -16,6 +16,7 @@ def header(p, lang='en', alt=None):
     <nav class="nav">
       <a href="{p}vi/index.html#san-pham">Sản phẩm</a>
       <a href="{p}vi/vneinvoicemate/">VNeInvoiceMate</a>
+      <a href="{p}vi/hiremate/">HireMate</a>
       <a href="{p}vi/vneinvoicemate/#bang-gia">Bảng giá</a>
       <a href="{p}vi/contact.html">Liên hệ</a>
       <a class="lang" href="{p}{alt or 'index.html'}" hreflang="en" lang="en">English</a>
@@ -47,7 +48,7 @@ def footer(p, lang='en'):
         <p class="muted" style="max-width:320px;margin:10px 0 0">Những công cụ nhỏ giúp bạn làm việc nhanh hơn.</p>
       </div>
       <div class="footer-links">
-        <div><strong>Sản phẩm</strong><a href="{p}vi/vneinvoicemate/">VNeInvoiceMate</a><a href="{p}vi/vneinvoicemate/#bang-gia">Bảng giá</a></div>
+        <div><strong>Sản phẩm</strong><a href="{p}vi/vneinvoicemate/">VNeInvoiceMate</a><a href="{p}vi/hiremate/">HireMate</a></div>
         <div><strong>Pháp lý</strong><a href="{p}vi/privacy.html">Chính sách quyền riêng tư</a><a href="{p}vi/terms.html">Điều khoản sử dụng</a><a href="{p}vi/refund.html">Chính sách hoàn tiền</a></div>
         <div><strong>FastMate</strong><a href="{p}vi/contact.html">Liên hệ</a><a href="mailto:fastmate.support@gmail.com">fastmate.support@gmail.com</a></div>
       </div>
@@ -298,7 +299,7 @@ f'''<section class="hero">
       <a class="btn btn-ghost" href="#">Add HireMate to Chrome</a>
     </div>
   </div>
-</section>''')
+</section>''', alt='vi/hiremate/index.html')
 
 # ---------------- Legal ----------------
 def legal(path, title, desc, inner):
