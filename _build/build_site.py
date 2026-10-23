@@ -74,6 +74,62 @@ def footer(p, lang='en'):
 </footer>'''
 
 SITE = 'https://fastmate.github.io/fastmate/'
+PAGES = []  # every generated page (path, lang) -> sitemap.xml
+import json as _json
+
+ORG = {'@type': 'Organization', 'name': 'FastMate', 'url': SITE, 'logo': SITE + 'assets/fastmate-mark.png',
+       'email': 'fastmate.support@gmail.com'}
+
+# Per product: share image + schema.org SoftwareApplication (Chrome extension, Free + Premium offers).
+PRODUCTS = {
+    'hiremate': {
+        'image': 'assets/og-hiremate.png',
+        'app': {'name': 'HireMate', 'alternateName': 'HireMate - Export LinkedIn Profiles to Excel',
+                'applicationCategory': 'BusinessApplication', 'applicationSubCategory': 'Recruiting',
+                'operatingSystem': 'Google Chrome',
+                'offers': [{'@type': 'Offer', 'name': 'Free', 'price': '0', 'priceCurrency': 'USD'},
+                           {'@type': 'Offer', 'name': 'Premium (monthly)', 'price': '4.99', 'priceCurrency': 'USD'},
+                           {'@type': 'Offer', 'name': 'Premium (quarterly)', 'price': '11.98', 'priceCurrency': 'USD'},
+                           {'@type': 'Offer', 'name': 'Premium (yearly)', 'price': '41.92', 'priceCurrency': 'USD'}]}},
+    'vneinvoicemate': {
+        'image': 'assets/og-vneinvoicemate.png',
+        'app': {'name': 'VNeInvoiceMate', 'applicationCategory': 'FinanceApplication',
+                'applicationSubCategory': 'Accounting', 'operatingSystem': 'Google Chrome',
+                'offers': [{'@type': 'Offer', 'name': 'Free', 'price': '0', 'priceCurrency': 'USD'},
+                           {'@type': 'Offer', 'name': 'Premium (monthly)', 'price': '1.99', 'priceCurrency': 'USD'},
+                           {'@type': 'Offer', 'name': 'Premium (yearly)', 'price': '19.99', 'priceCurrency': 'USD'}]}},
+}
+
+def seo_head(path, title, desc, lang):
+    url = SITE + path.replace('index.html', '')
+    product = next((k for k in PRODUCTS if '/' + k + '/' in '/' + path), None)
+    image = SITE + (PRODUCTS[product]['image'] if product else 'assets/og-fastmate.png')
+    esc = lambda t: t.replace('&', '&amp;').replace('"', '&quot;')
+    tags = [
+        f'<link rel="canonical" href="{url}">',
+        '<meta property="og:site_name" content="FastMate">',
+        f'<meta property="og:type" content="{"product" if product else "website"}">',
+        f'<meta property="og:locale" content="{"vi_VN" if lang == "vi" else "en_US"}">',
+        f'<meta property="og:title" content="{esc(title)}">',
+        f'<meta property="og:description" content="{esc(desc)}">',
+        f'<meta property="og:url" content="{url}">',
+        f'<meta property="og:image" content="{image}">',
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{esc(title)}">',
+        f'<meta name="twitter:description" content="{esc(desc)}">',
+        f'<meta name="twitter:image" content="{image}">',
+    ]
+    data = None
+    if product:
+        data = dict({'@context': 'https://schema.org', '@type': 'SoftwareApplication', 'url': url,
+                     'description': desc, 'image': image, 'inLanguage': lang, 'publisher': ORG}, **PRODUCTS[product]['app'])
+    elif path in ('index.html', 'vi/index.html'):
+        data = dict({'@context': 'https://schema.org'}, **ORG)
+    if data:
+        tags.append('<script type="application/ld+json">' + _json.dumps(data, ensure_ascii=False) + '</script>')
+    return '\n' + '\n'.join(tags)
 
 def page(path, title, desc, body, lang='en', alt=None):
     # alt: the same page in the other language (path from the site root), for the language switch and hreflang
@@ -89,7 +145,7 @@ def page(path, title, desc, body, lang='en', alt=None):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="{desc}">{hreflang}
+<meta name="description" content="{desc}">{hreflang}{seo_head(path, title, desc, lang)}
 <link rel="icon" href="{p}assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="{p}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +164,7 @@ def page(path, title, desc, body, lang='en', alt=None):
     full = os.path.join(OUT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     io.open(full, 'w', encoding='utf-8', newline='\n').write(html)
+    PAGES.append(path)
 
 ICON = {
  'table': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>',
@@ -173,7 +230,7 @@ page('hiremate/index.html', 'HireMate — Export LinkedIn™ profiles to Excel &
 f'''<section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">HireMate · Chrome extension</span>
+      <span class="eyebrow">HireMate · LinkedIn to Excel Chrome extension for recruiters</span>
       <h1>Build your candidate shortlist in minutes, not hours.</h1>
       <p class="lead">HireMate is a Chrome side panel for recruiters. Open a candidate’s profile, save it in one click, and export a clean Excel file with every role, company, industry and education — then manage your whole talent pool in one dashboard.</p>
       <div class="actions">
@@ -386,3 +443,12 @@ page('contact.html', 'Contact — FastMate', 'Contact FastMate.', alt='vi/contac
 exec(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_vi.py'), encoding='utf-8').read())
 
 print('built')
+
+
+# sitemap.xml (submit https://fastmate.github.io/fastmate/sitemap.xml in Google Search Console)
+import datetime as _dt
+_today = _dt.date.today().isoformat()
+_urls = ''.join('<url><loc>' + SITE + x.replace('index.html', '') + '</loc><lastmod>' + _today + '</lastmod></url>' for x in PAGES)
+io.open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n').write(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + _urls + '</urlset>\n')
+print('sitemap', len(PAGES), 'urls')
