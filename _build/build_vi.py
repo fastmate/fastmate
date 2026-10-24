@@ -64,7 +64,7 @@ f'''<section class="hero">
       <h1>Tải hóa đơn điện tử hàng loạt, kiểm tra trước khi kê khai.</h1>
       <p class="lead">Đăng nhập hoadondientu.gdt.gov.vn như bình thường, chọn kỳ và bấm tải. VNeInvoiceMate lấy đủ hóa đơn mua vào, bán ra kèm dòng hàng và file XML gốc, xuất Excel gọn gàng — rồi chỉ ra những hóa đơn cần bạn để mắt tới.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="{VNI_STORE}">Thêm vào Chrome — miễn phí</a>
+        <a class="btn btn-primary" href="{VNI_STORE}" target="_blank" rel="noopener">Thêm vào Chrome — miễn phí</a>
         <a class="btn btn-ghost" href="#bang-gia">Xem bảng giá</a>
       </div>
       <div class="trust"><span>Dữ liệu chỉ lưu trên máy bạn</span><span>Không lưu mật khẩu</span><span>Thiết kế cho đến 500.000 hóa đơn/năm</span></div>
@@ -123,7 +123,7 @@ f'''<section class="hero">
           <li>Xem, lọc, tìm, làm mới trạng thái hóa đơn</li>
           <li>Trang Tổng quan thuế GTGT vào – ra</li>
         </ul>
-        <a class="btn btn-ghost" href="{VNI_STORE}">Thêm vào Chrome</a>
+        <a class="btn btn-ghost" href="{VNI_STORE}" target="_blank" rel="noopener">Thêm vào Chrome</a>
       </div>
       <div class="plan featured">
         <div><h3>Premium</h3><p class="muted" style="margin:0">Cho kế toán làm hằng tháng</p></div>
@@ -183,7 +183,7 @@ f'''<section class="hero">
   <div class="wrap">
     <div class="cta">
       <div><h2>Tải hóa đơn tháng này trong vài phút.</h2><p>Cài miễn phí. Không cần tạo tài khoản.</p></div>
-      <a class="btn btn-ghost" href="{VNI_STORE}">Thêm VNeInvoiceMate vào Chrome</a>
+      <a class="btn btn-ghost" href="{VNI_STORE}" target="_blank" rel="noopener">Thêm VNeInvoiceMate vào Chrome</a>
     </div>
   </div>
 </section>''', lang='vi')
