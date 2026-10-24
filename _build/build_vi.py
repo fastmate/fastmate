@@ -276,4 +276,4 @@ page('vi/contact.html', 'Liên hệ — FastMate', 'Liên hệ FastMate.', '''
 # /vneinvoicemate/ → the Vietnamese page (the product exists only in the Vietnamese edition)
 _redir = os.path.join(OUT, 'vneinvoicemate', 'index.html')
 os.makedirs(os.path.dirname(_redir), exist_ok=True)
-io.open(_redir, 'w', encoding='utf-8', newline='\n').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../vi/vneinvoicemate/"><link rel="canonical" href="https://fastmate.github.io/fastmate/vi/vneinvoicemate/"><a href="../vi/vneinvoicemate/">VNeInvoiceMate</a>')
+io.open(_redir, 'w', encoding='utf-8', newline='\n').write('<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../vi/vneinvoicemate/"><link rel="canonical" href="https://fastmate.io.vn/vi/vneinvoicemate/"><a href="../vi/vneinvoicemate/">VNeInvoiceMate</a>')

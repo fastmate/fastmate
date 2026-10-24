@@ -73,7 +73,7 @@ def footer(p, lang='en'):
   </div>
 </footer>'''
 
-SITE = 'https://fastmate.github.io/fastmate/'
+SITE = 'https://fastmate.io.vn/'
 PAGES = []  # every generated page (path, lang) -> sitemap.xml
 import json as _json
 
@@ -445,7 +445,7 @@ exec(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'build_vi.
 print('built')
 
 
-# sitemap.xml (submit https://fastmate.github.io/fastmate/sitemap.xml in Google Search Console)
+# sitemap.xml (submit https://fastmate.io.vn/sitemap.xml in Google Search Console)
 import datetime as _dt
 _today = _dt.date.today().isoformat()
 _urls = ''.join('<url><loc>' + SITE + x.replace('index.html', '') + '</loc><lastmod>' + _today + '</lastmod></url>' for x in PAGES)
