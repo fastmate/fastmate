@@ -10,7 +10,7 @@ f'''<section class="hero">
       <h1>Lập danh sách ứng viên trong vài phút, không phải vài giờ.</h1>
       <p class="lead">HireMate là bảng bên (side panel) trên Chrome dành cho nhân sự tuyển dụng. Mở hồ sơ ứng viên, lưu bằng một cú bấm và xuất file Excel gọn gàng với đầy đủ vị trí, công ty, ngành, học vấn — rồi quản lý toàn bộ nguồn ứng viên trong một dashboard.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#">Thêm vào Chrome — miễn phí</a>
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Thêm vào Chrome — miễn phí</a>
         <a class="btn btn-ghost" href="#bang-gia">Xem bảng giá</a>
       </div>
       <div class="trust"><span>Dữ liệu chỉ lưu trong trình duyệt</span><span>Không cần tạo tài khoản</span><span>Dùng tài khoản LinkedIn của chính bạn</span><span>Giao diện tiếng Anh</span></div>
@@ -70,7 +70,7 @@ f'''<section class="hero">
           <li>Tối đa 3 dự án</li>
           <li>“Có khả năng chuyển việc nhất”: xem trước 3 người đầu</li>
         </ul>
-        <a class="btn btn-ghost" href="#">Thêm vào Chrome</a>
+        <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Thêm vào Chrome</a>
       </div>
       <div class="plan featured">
         <div><h3>Premium</h3><p class="muted" style="margin:0">Cho người tìm nguồn mỗi ngày</p></div>
@@ -129,7 +129,7 @@ f'''<section class="hero">
   <div class="wrap">
     <div class="cta">
       <div><h2>Lập danh sách ứng viên tiếp theo trong vài phút.</h2><p>Cài miễn phí. Không cần tạo tài khoản.</p></div>
-      <a class="btn btn-ghost" href="#">Thêm HireMate vào Chrome</a>
+      <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Thêm HireMate vào Chrome</a>
     </div>
   </div>
 </section>''', lang='vi', alt='hiremate/index.html')

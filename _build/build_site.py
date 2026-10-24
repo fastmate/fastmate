@@ -6,7 +6,8 @@ UPDATED_VI = '15/10/2026'
 # Two language editions: English at the root (global products: HireMate), Vietnamese under /vi/ (VNeInvoiceMate,
 # Vietnam only). VNeInvoiceMate never appears in the English edition.
 VNI_CHECKOUT = 'https://fastmate.lemonsqueezy.com/checkout/buy/e2bd491d-acda-4799-8593-6019b564d2b3'
-VNI_STORE = '#'  # Chrome Web Store link once published
+VNI_STORE = 'https://chromewebstore.google.com/detail/ljfjbapabcjcbbihginmmmieaafeoemg?utm_source=fastmate.io.vn'  # Chrome Web Store
+HM_STORE = 'https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn'  # Chrome Web Store
 
 def header(p, lang='en', alt=None):
     if lang == 'vi':
@@ -20,7 +21,7 @@ def header(p, lang='en', alt=None):
       <a href="{p}vi/vneinvoicemate/#bang-gia">Bảng giá</a>
       <a href="{p}vi/contact.html">Liên hệ</a>
       <a class="lang" href="{p}{alt or 'index.html'}" hreflang="en" lang="en">English</a>
-      <a class="btn btn-primary btn-sm" href="{VNI_STORE}">Thêm vào Chrome</a>
+      <a class="btn btn-primary btn-sm" href="{HM_STORE if (alt or '').startswith('hiremate/') else VNI_STORE}">Thêm vào Chrome</a>
     </nav>
   </div>
 </header>'''
@@ -33,7 +34,7 @@ def header(p, lang='en', alt=None):
       <a href="{p}hiremate/#pricing">Pricing</a>
       <a href="{p}contact.html">Contact</a>
       <a class="lang" href="{p}{alt or 'vi/index.html'}" hreflang="vi" lang="vi">Tiếng Việt</a>
-      <a class="btn btn-primary btn-sm" href="#">Add to Chrome</a>
+      <a class="btn btn-primary btn-sm" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Add to Chrome</a>
     </nav>
   </div>
 </header>'''
@@ -234,7 +235,7 @@ f'''<section class="hero">
       <h1>Build your candidate shortlist in minutes, not hours.</h1>
       <p class="lead">HireMate is a Chrome side panel for recruiters. Open a candidate’s profile, save it in one click, and export a clean Excel file with every role, company, industry and education — then manage your whole talent pool in one dashboard.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#">Add to Chrome — it’s free</a>
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Add to Chrome — it’s free</a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
       </div>
       <div class="trust"><span>Data stays in your browser</span><span>No account needed</span><span>Works with your own login</span></div>
@@ -294,7 +295,7 @@ f'''<section class="hero">
           <li>Up to 3 projects</li>
           <li>“Most likely to move”: preview of the top 3</li>
         </ul>
-        <a class="btn btn-ghost" href="#">Add to Chrome</a>
+        <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Add to Chrome</a>
       </div>
       <div class="plan featured">
         <div><h3>Premium</h3><p class="muted" style="margin:0">For recruiters who source every day</p></div>
@@ -353,7 +354,7 @@ f'''<section class="hero">
   <div class="wrap">
     <div class="cta">
       <div><h2>Save your next shortlist in minutes.</h2><p>Free to install. No account needed.</p></div>
-      <a class="btn btn-ghost" href="#">Add HireMate to Chrome</a>
+      <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn">Add HireMate to Chrome</a>
     </div>
   </div>
 </section>''', alt='vi/hiremate/index.html')
