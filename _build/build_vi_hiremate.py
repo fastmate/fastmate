@@ -1,14 +1,14 @@
 # Vietnamese page for HireMate (the extension's own UI stays English). Executed by build_vi.py.
 HM_CHECKOUT = 'https://fastmate.lemonsqueezy.com/checkout/buy/b649a58d-00c4-41a0-ad82-a3b9c0660f90'
 
-page('vi/hiremate/index.html', 'HireMate — Lưu hồ sơ LinkedIn™ ra Excel và quản lý nguồn ứng viên',
- 'HireMate là tiện ích Chrome cho nhân sự tuyển dụng: lưu hồ sơ ứng viên đang xem thành danh sách Excel gọn gàng, quản lý nguồn ứng viên với dashboard, bản đồ nhân tài và quy trình tuyển dụng.',
+page('vi/hiremate/index.html', 'HireMate — Xuất hồ sơ LinkedIn™ ra Excel, biết ai sắp chuyển việc, xem lộ trình nghề nghiệp',
+ 'HireMate là tiện ích Chrome cho nhân sự tuyển dụng: xuất hồ sơ LinkedIn™ ra Excel bằng một cú bấm, biết ứng viên nào có khả năng chuyển việc và so sánh lộ trình nghề nghiệp của bất kỳ vị trí nào.',
 f'''<section class="hero">
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">HireMate · Tiện ích Chrome</span>
-      <h1>Lập danh sách ứng viên trong vài phút, không phải vài giờ.</h1>
-      <p class="lead">HireMate là bảng bên (side panel) trên Chrome dành cho nhân sự tuyển dụng. Mở hồ sơ ứng viên, lưu bằng một cú bấm và xuất file Excel gọn gàng với đầy đủ vị trí, công ty, ngành, học vấn — rồi quản lý toàn bộ nguồn ứng viên trong một dashboard.</p>
+      <h1>Xuất Excel một cú bấm. Biết ai sắp chuyển việc. Thấy rõ lộ trình nghề.</h1>
+      <p class="lead">HireMate là bảng bên (side panel) trên Chrome dành cho nhân sự tuyển dụng: lưu hồ sơ LinkedIn™ ra file Excel gọn gàng bằng một cú bấm, biết ứng viên nào có khả năng chuyển việc, và so sánh lộ trình nghề nghiệp thực tế của bất kỳ vị trí nào — dữ liệu không rời khỏi trình duyệt.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Thêm vào Chrome — miễn phí</a>
         <a class="btn btn-ghost" href="#bang-gia">Xem bảng giá</a>
@@ -22,17 +22,44 @@ f'''<section class="hero">
 <section id="tinh-nang">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Tính năng</span>
-      <h2>Mọi việc sau khi “đã tìm được ứng viên tốt”</h2>
-      <p class="lead">Thôi sao chép, dán thủ công. Dành thời gian để trò chuyện với ứng viên.</p>
+      <span class="eyebrow">Ba tính năng chính</span>
+      <h2>Ba việc HireMate làm giúp bạn</h2>
+      <p class="lead">Tiết kiệm thời gian với từng hồ sơ, biết nên gọi ai trước, và thống nhất yêu cầu thực tế với quản lý tuyển dụng.</p>
     </div>
+    <div class="features">
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">1</span><span class="eyebrow">Xuất Excel một cú bấm</span></div>
+          <h3>Hồ sơ nào cũng ra Excel chỉ với một cú bấm</h3>
+          <p>Mở hồ sơ LinkedIn™ của ứng viên, HireMate tự đọc mọi vị trí, thời gian, công ty, ngành, mô tả công việc và trường học. Lưu bằng một cú bấm (Alt+S) và xuất file Excel gọn gàng — mỗi ứng viên một dòng, cột đánh số sẵn sàng để lọc.</p>
+          <ul class="ticks"><li>Chỉnh sửa mọi trường trước khi lưu</li><li>Tìm người theo chức danh, địa điểm, công ty và ngành</li><li>Xuất toàn bộ, theo bộ lọc hoặc chỉ những dòng bạn chọn</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-export.jpg" alt="Bảng ứng viên của HireMate với nút Export to Excel" width="752" height="692" loading="lazy"></div>
+      </div>
+      <div class="feature-row flip">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">2</span><span class="eyebrow">Ai sắp chuyển việc</span></div>
+          <h3>Biết ai có khả năng chuyển việc</h3>
+          <p>HireMate chấm mỗi ứng viên đã lưu mức Cao, Trung bình hoặc Thấp về khả năng đổi việc trong vài tháng tới — luôn kèm lý do, để bạn biết nên liên hệ ai trước.</p>
+          <ul class="ticks"><li>Thời gian ở vị trí hiện tại so với quy luật của chính họ</li><li>Bao lâu chưa được thăng chức, người ta thường ở công ty đó bao lâu</li><li>Báo ngay khi ứng viên đổi việc lúc làm mới hồ sơ</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-move.jpg" alt="Danh sách ứng viên có khả năng chuyển việc nhất kèm lý do" width="752" height="692" loading="lazy"></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">3</span><span class="eyebrow">Lộ trình nghề nghiệp</span></div>
+          <h3>So sánh lộ trình nghề nghiệp của bất kỳ vị trí nào</h3>
+          <p>Quét thị trường cho một nhóm nghề ở quốc gia hoặc thành phố bạn tuyển và xem toàn bộ nấc thang từ thực tập đến C-level: người ta lên mỗi cấp khi có bao nhiêu năm kinh nghiệm, ở lại bao lâu và ai được lên tiếp.</p>
+          <ul class="ticks"><li>Nhận định sẵn cho buổi trao đổi với quản lý — ví dụ “Yêu cầu 6–9 năm, đừng đòi 10+”</li><li>Ở mỗi cấp: ai lên tiếp, ai ở lại, ai rời nghề</li><li>So sánh bất kỳ ứng viên nào với thị trường — 20 nhóm nghề, đọc chức danh 9 ngôn ngữ</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-career.jpg" alt="Nấc thang nghề nghiệp của HireMate kèm nhận định và ứng viên được so sánh" width="752" height="692" loading="lazy"></div>
+      </div>
+    </div>
+    <h3 class="also-title">Và còn có</h3>
     <div class="grid-3">
-      <div class="card"><div class="icon">{ICON['table']}</div><h3>Một cú bấm ra Excel</h3><p>Mọi vị trí, thời gian, công ty, ngành, mô tả công việc và trường học — chia cột đánh số, sẵn sàng lọc trong Excel.</p></div>
-      <div class="card"><div class="icon green">{ICON['search']}</div><h3>Tìm kiếm &amp; chọn lọc</h3><p>Tìm người theo chức danh, địa điểm, công ty, ngành; xem ngay vị trí hiện tại và tổng số năm kinh nghiệm, lưu người phù hợp.</p></div>
-      <div class="card"><div class="icon">{ICON['chart']}</div><h3>Bản đồ nhân tài</h3><p>Ứng viên đang làm ở đâu, thuộc ngành nào, học trường gì, bao nhiêu năm kinh nghiệm — bức tranh để mang vào mỗi buổi trao đổi với quản lý tuyển dụng.</p></div>
-      <div class="card"><div class="icon green">{ICON['trend']}</div><h3>Ai có khả năng chuyển việc</h3><p>Ước tính minh bạch ai có thể đổi việc trong vài tháng tới, dựa trên quy luật sự nghiệp trong chính danh sách bạn đã lưu — kèm lý do.</p></div>
+      <div class="card"><div class="icon">{ICON['search']}</div><h3>Tìm kiếm &amp; chọn lọc</h3><p>Tìm người theo chức danh, địa điểm, công ty, ngành; xem ngay vị trí hiện tại và tổng số năm kinh nghiệm, lưu người phù hợp.</p></div>
+      <div class="card"><div class="icon green">{ICON['chart']}</div><h3>Bản đồ nhân tài</h3><p>Ứng viên đã lưu đang làm ở đâu, thuộc ngành nào, học trường gì, bao nhiêu năm kinh nghiệm.</p></div>
       <div class="card"><div class="icon">{ICON['board']}</div><h3>Quy trình tuyển dụng</h3><p>Mỗi vị trí một bảng: kéo thả ứng viên từ Tìm nguồn đến Trúng tuyển, thêm ghi chú, thẻ và theo dõi phễu tuyển dụng.</p></div>
-      <div class="card"><div class="icon green">{ICON['refresh']}</div><h3>Luôn cập nhật</h3><p>Làm mới hồ sơ đã lưu để lấy vị trí mới và được báo khi ứng viên đổi công ty.</p></div>
     </div>
   </div>
 </section>
@@ -43,7 +70,7 @@ f'''<section class="hero">
     <div class="grid-3 steps">
       <div class="step"><h3>Cài và mở</h3><p class="muted">Thêm HireMate vào Chrome và ghim lên thanh công cụ. Bấm biểu tượng để mở bảng bên.</p></div>
       <div class="step"><h3>Xem và lưu</h3><p class="muted">Mở hồ sơ ứng viên — HireMate tự đọc giúp bạn. Chỉnh sửa nếu cần, rồi lưu vào danh sách.</p></div>
-      <div class="step"><h3>Xuất và hành động</h3><p class="muted">Xuất ra Excel, hoặc dùng dashboard để xem bản đồ nhân tài, theo dõi quy trình và tìm người có thể sẵn sàng chuyển việc.</p></div>
+      <div class="step"><h3>Xuất và hành động</h3><p class="muted">Xuất ra Excel, liên hệ trước với người có khả năng chuyển việc cao, và dùng lộ trình nghề nghiệp để thống nhất yêu cầu thực tế với quản lý tuyển dụng.</p></div>
     </div>
   </div>
 </section>
@@ -64,11 +91,11 @@ f'''<section class="hero">
         <div><h3>Miễn phí</h3><p class="muted" style="margin:0">Cho nhu cầu tìm nguồn thỉnh thoảng</p></div>
         <div class="price">$0<small> mãi mãi</small></div>
         <ul>
-          <li>Lưu hồ sơ từ bảng bên &amp; xuất Excel</li>
-          <li>Dashboard, bản đồ nhân tài, ghi chú &amp; thẻ</li>
-          <li>Tìm kiếm: lấy 10 hồ sơ mỗi lượt, tối đa 50 mỗi ngày</li>
-          <li>Tối đa 3 dự án</li>
+          <li>Lưu hồ sơ &amp; xuất Excel bằng một cú bấm</li>
           <li>“Có khả năng chuyển việc nhất”: xem trước 3 người đầu</li>
+          <li>Nấc thang nghề nghiệp từ ứng viên đã lưu</li>
+          <li>Tìm kiếm: lấy 10 hồ sơ mỗi lượt, tối đa 50 mỗi ngày</li>
+          <li>Dashboard, bản đồ nhân tài, ghi chú &amp; thẻ, tối đa 3 dự án</li>
         </ul>
         <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Thêm vào Chrome</a>
       </div>
@@ -81,6 +108,7 @@ f'''<section class="hero">
         <ul>
           <li>Mọi tính năng miễn phí</li>
           <li><strong>Đầy đủ danh sách “Có khả năng chuyển việc”</strong> kèm lý do</li>
+          <li><strong>Quét thị trường cho lộ trình nghề nghiệp</strong> — nhận định, ai được lên tiếp và so sánh ứng viên</li>
           <li><strong>Lấy hồ sơ từ tìm kiếm không giới hạn</strong> — không giới hạn theo ngày, 50 hồ sơ mỗi lượt</li>
           <li><strong>Vị trí, công ty hiện tại &amp; tổng kinh nghiệm</strong> ngay trong kết quả tìm kiếm</li>
           <li><strong>Không giới hạn dự án</strong></li>
@@ -119,7 +147,9 @@ f'''<section class="hero">
       <details><summary>Có cần tài khoản LinkedIn Recruiter không?</summary><p>Không. HireMate làm việc với những hồ sơ bạn vẫn xem được bằng tài khoản LinkedIn của mình. Tài khoản LinkedIn miễn phí có giới hạn tìm kiếm riêng, và HireMate tuân thủ giới hạn đó.</p></details>
       <details><summary>HireMate có gửi tin nhắn hay lời mời kết nối không?</summary><p>Không. HireMate không bao giờ gửi tin nhắn, lời mời hay bài đăng thay bạn. Các tính năng hàng loạt đều có giới hạn và giãn cách để bảo vệ tài khoản của bạn.</p></details>
       <details><summary>“Có khả năng chuyển việc” được tính thế nào?</summary><p>Từ quy luật sự nghiệp trong chính danh sách bạn đã lưu: người ta thường ở bao lâu trước khi chuyển, người này thường ở mỗi công ty bao lâu, bao lâu chưa được thăng chức và các tín hiệu tương tự. Đây là ước tính kèm lý do — không phải sự thật về bất kỳ ai.</p></details>
-      <details><summary>Bản miễn phí có gì?</summary><p>Lưu hồ sơ, xuất Excel, dashboard và bản đồ nhân tài đều miễn phí. Bản miễn phí cho lấy 10 kết quả tìm kiếm mỗi lượt và tối đa 50 mỗi ngày, tối đa 3 dự án và xem trước 3 người có khả năng chuyển việc nhất. Premium bỏ các giới hạn này và thêm vị trí, công ty hiện tại, tổng kinh nghiệm vào kết quả tìm kiếm.</p></details>
+      <details><summary>Lộ trình nghề nghiệp hoạt động thế nào?</summary><p>Chọn nhóm nghề, địa điểm và (tùy chọn) ngành. HireMate tìm trên LinkedIn bằng phiên đăng nhập của chính bạn, đọc tối đa 50 hồ sơ mỗi lượt với tốc độ như người thật và xếp từng vị trí lên nấc thang 8 cấp từ thực tập đến C-level; ứng viên bạn đã lưu cũng được tính vào. Quét thêm để mở rộng dữ liệu — người đã có sẽ được bỏ qua.</p></details>
+      <details><summary>Quét thị trường lưu những gì?</summary><p>Chỉ dữ liệu nghề nghiệp ẩn danh: chức danh được xếp vào nhóm nghề và cấp bậc, kèm thời gian. Không lưu tên, ảnh hay link hồ sơ, người được quét không bị thêm vào danh sách ứng viên, và mọi thứ chỉ nằm trong trình duyệt của bạn.</p></details>
+      <details><summary>Bản miễn phí có gì?</summary><p>Lưu hồ sơ và xuất Excel một cú bấm, dashboard, bản đồ nhân tài và nấc thang nghề nghiệp từ ứng viên đã lưu đều miễn phí. Bản miễn phí cho lấy 10 kết quả tìm kiếm mỗi lượt và tối đa 50 mỗi ngày, tối đa 3 dự án và xem trước 3 người có khả năng chuyển việc nhất. Premium bỏ các giới hạn này, thêm quét thị trường cho lộ trình nghề nghiệp kèm nhận định, cùng vị trí, công ty hiện tại và tổng kinh nghiệm trong kết quả tìm kiếm.</p></details>
       <details><summary>Có thể hủy Premium không?</summary><p>Có, bất cứ lúc nào qua đường link trong email biên nhận. Bạn vẫn dùng Premium đến hết kỳ đã thanh toán. Xem <a href="{{P}}vi/refund.html">Chính sách hoàn tiền</a>.</p></details>
     </div>
   </div>
@@ -128,7 +158,7 @@ f'''<section class="hero">
 <section>
   <div class="wrap">
     <div class="cta">
-      <div><h2>Lập danh sách ứng viên tiếp theo trong vài phút.</h2><p>Cài miễn phí. Không cần tạo tài khoản.</p></div>
+      <div><h2>Xuất Excel, ưu tiên đúng người, so sánh với thị trường — trong một bảng bên.</h2><p>Cài miễn phí. Không cần tạo tài khoản.</p></div>
       <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Thêm HireMate vào Chrome</a>
     </div>
   </div>

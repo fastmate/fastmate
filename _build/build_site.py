@@ -175,6 +175,7 @@ ICON = {
  'trend': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg>',
  'shield': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7l8-4z"/></svg>',
  'search': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+ 'ladder': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg>',
  'refresh': '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>',
 }
 
@@ -202,7 +203,7 @@ f'''<section class="hero">
     <div class="grid-2">
       <div class="card product">
         <div class="logo-row"><img src="assets/hiremate-icon.png" alt=""><div><h3>HireMate</h3><span class="tag">Available</span></div></div>
-        <p>A Chrome extension for recruiters: turn the candidate profiles you view into a clean Excel shortlist, then organize your talent pool with a dashboard, talent map and hiring pipeline.</p>
+        <p>A Chrome extension for recruiters: export LinkedIn™ profiles to Excel in one click, see who is likely to move and benchmark the career path of any role.</p>
         <div class="links"><a class="btn btn-primary btn-sm" href="hiremate/">Learn more</a><a class="btn btn-ghost btn-sm" href="hiremate/#pricing">Pricing</a></div>
       </div>
       <div class="card product soon">
@@ -226,14 +227,14 @@ f'''<section class="hero">
 </section>''', alt='vi/index.html')
 
 # ---------------- HireMate product page ----------------
-page('hiremate/index.html', 'HireMate — Export LinkedIn™ profiles to Excel & manage your talent pool',
- 'HireMate is a Chrome extension for recruiters: save candidate profiles you view to a clean Excel shortlist, then manage your talent pool with a dashboard, talent map and hiring pipeline.',
+page('hiremate/index.html', 'HireMate — Export LinkedIn™ profiles to Excel, see who will move, benchmark career paths',
+ 'HireMate is a Chrome extension for recruiters: export LinkedIn™ profiles to Excel in one click, see which candidates are likely to move and benchmark the career path of any role.',
 f'''<section class="hero">
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">HireMate · LinkedIn to Excel Chrome extension for recruiters</span>
-      <h1>Build your candidate shortlist in minutes, not hours.</h1>
-      <p class="lead">HireMate is a Chrome side panel for recruiters. Open a candidate’s profile, save it in one click, and export a clean Excel file with every role, company, industry and education — then manage your whole talent pool in one dashboard.</p>
+      <h1>Export in one click. Know who will move. Benchmark any career.</h1>
+      <p class="lead">HireMate is a Chrome side panel for recruiters: save LinkedIn™ profiles to a clean Excel file in one click, see which candidates are likely to move, and benchmark the real career path of any role — without your data leaving the browser.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Add to Chrome — it’s free</a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
@@ -247,17 +248,44 @@ f'''<section class="hero">
 <section id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Features</span>
-      <h2>Everything after “I found a good candidate”</h2>
-      <p class="lead">Stop copying and pasting. Spend your time talking to candidates instead.</p>
+      <span class="eyebrow">Three key features</span>
+      <h2>Three things HireMate does for you</h2>
+      <p class="lead">Save time on every profile, know who to call first, and set realistic expectations with hiring managers.</p>
     </div>
+    <div class="features">
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">1</span><span class="eyebrow">Export in one click</span></div>
+          <h3>Any profile to Excel in one click</h3>
+          <p>Open a candidate’s LinkedIn™ profile and HireMate reads every role, period, company, industry, job description and school. Save it with one click (Alt+S) and export a clean Excel file — one row per candidate, numbered columns ready to filter.</p>
+          <ul class="ticks"><li>Edit any field before saving</li><li>Search people by title, location, company and industry</li><li>Export everyone, a filtered view or just the rows you pick</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-export.jpg" alt="HireMate candidates table with Export to Excel" width="752" height="692" loading="lazy"></div>
+      </div>
+      <div class="feature-row flip">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">2</span><span class="eyebrow">Likely to move</span></div>
+          <h3>Know who is likely to move</h3>
+          <p>HireMate rates every saved candidate High, Medium or Low for changing jobs in the next months — always with the reasons, so you know who to call first.</p>
+          <ul class="ticks"><li>Time in role vs. their own career pattern</li><li>Years without a promotion and how long people stay at their company</li><li>Job changes flagged when you refresh profiles</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-move.jpg" alt="HireMate list of candidates most likely to move, with reasons" width="752" height="692" loading="lazy"></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag"><span class="feature-num">3</span><span class="eyebrow">Career paths</span></div>
+          <h3>Benchmark the career path of any role</h3>
+          <p>Scan the market for a job family in the countries or cities you hire in and see the whole ladder, from intern to C-level: how many years of experience people have when they reach each level, how long they stay and who moves up.</p>
+          <ul class="ticks"><li>Key insights for intake meetings — e.g. “Ask for 6–9 yrs, not 10+”</li><li>Who moves up, stays or leaves at each level</li><li>Compare any candidate with the market — 20 job families, titles read in 9 languages</li></ul>
+        </div>
+        <div class="feature-shot"><img src="{{P}}assets/hiremate-career.jpg" alt="HireMate career ladder with insights and a compared candidate" width="752" height="692" loading="lazy"></div>
+      </div>
+    </div>
+    <h3 class="also-title">Also included</h3>
     <div class="grid-3">
-      <div class="card"><div class="icon">{ICON['table']}</div><h3>One-click to Excel</h3><p>Every role, period, company, industry, description and school — numbered columns, ready to filter in Excel.</p></div>
-      <div class="card"><div class="icon green">{ICON['search']}</div><h3>Search & shortlist</h3><p>Search people by title, location, company and industry, see current role and total experience at a glance, and save the ones you like.</p></div>
-      <div class="card"><div class="icon">{ICON['chart']}</div><h3>Talent map</h3><p>See where your talent works, their industries, schools and experience — the snapshot to bring to every hiring-manager intake.</p></div>
-      <div class="card"><div class="icon green">{ICON['trend']}</div><h3>Who is likely to move</h3><p>A transparent estimate of who may change jobs in the next months, based on career patterns in your own saved pool — with the reasons.</p></div>
+      <div class="card"><div class="icon">{ICON['search']}</div><h3>Search &amp; shortlist</h3><p>Search people by title, location, company and industry, see current role and total experience at a glance, and save the ones you like.</p></div>
+      <div class="card"><div class="icon green">{ICON['chart']}</div><h3>Talent map</h3><p>Where your saved talent works, their industries, schools and experience — the snapshot for every hiring-manager intake.</p></div>
       <div class="card"><div class="icon">{ICON['board']}</div><h3>Hiring pipeline</h3><p>One board per opening: drag candidates from Sourced to Hired, add notes and tags, and track your funnel.</p></div>
-      <div class="card"><div class="icon green">{ICON['refresh']}</div><h3>Stay up to date</h3><p>Refresh saved profiles to pick up new roles and get flagged when a candidate changes jobs.</p></div>
     </div>
   </div>
 </section>
@@ -268,7 +296,7 @@ f'''<section class="hero">
     <div class="grid-3 steps">
       <div class="step"><h3>Install & open</h3><p class="muted">Add HireMate to Chrome and pin it. Click the icon to open the side panel.</p></div>
       <div class="step"><h3>View & save</h3><p class="muted">Open a candidate’s profile — HireMate reads it for you. Edit anything, then save it to your list.</p></div>
-      <div class="step"><h3>Export & act</h3><p class="muted">Export to Excel, or use the dashboard to map talent, track your pipeline and spot who may be open to a move.</p></div>
+      <div class="step"><h3>Export & act</h3><p class="muted">Export to Excel, call the people most likely to move first, and use career paths to agree realistic requirements with hiring managers.</p></div>
     </div>
   </div>
 </section>
@@ -289,11 +317,11 @@ f'''<section class="hero">
         <div><h3>Free</h3><p class="muted" style="margin:0">For occasional sourcing</p></div>
         <div class="price">$0<small> forever</small></div>
         <ul>
-          <li>Save profiles from the side panel &amp; export to Excel</li>
-          <li>Dashboard, talent map, notes &amp; tags</li>
-          <li>Search: extract 10 profiles per run, up to 50 per day</li>
-          <li>Up to 3 projects</li>
+          <li>Save profiles &amp; export to Excel in one click</li>
           <li>“Most likely to move”: preview of the top 3</li>
+          <li>Career ladder from your saved candidates</li>
+          <li>Search: extract 10 profiles per run, up to 50 per day</li>
+          <li>Dashboard, talent map, notes &amp; tags, up to 3 projects</li>
         </ul>
         <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Add to Chrome</a>
       </div>
@@ -306,6 +334,7 @@ f'''<section class="hero">
         <ul>
           <li>Everything in Free</li>
           <li><strong>Full “Most likely to move” list</strong> with reasons</li>
+          <li><strong>Career-path market scans</strong> — key insights, who moves up and candidate comparison</li>
           <li><strong>Unlimited search extraction</strong> — no daily limit, 50 profiles per run</li>
           <li><strong>Current position, company &amp; total experience</strong> right in search results</li>
           <li><strong>Unlimited projects</strong></li>
@@ -344,7 +373,9 @@ f'''<section class="hero">
       <details><summary>Do I need a LinkedIn Recruiter account?</summary><p>No. HireMate works with the profiles you can already see with your own LinkedIn account. Free LinkedIn accounts have their own search limits, which HireMate respects.</p></details>
       <details><summary>Does HireMate send messages or connection requests?</summary><p>No. HireMate never sends messages, invitations or posts on your behalf. Bulk features are capped and throttled to protect your account.</p></details>
       <details><summary>How is “likely to move” calculated?</summary><p>From career patterns in your own saved pool: how long people usually stay before moving, how long this person usually stays per company, time without a promotion and similar signals. It is an estimate, shown with its reasons — not a fact about any person.</p></details>
-      <details><summary>What do I get for free?</summary><p>Saving profiles, Excel export, the dashboard and talent map are free. The free plan lets you extract 10 search results per run and up to 50 per day, includes up to 3 projects and a preview of the top 3 people most likely to move. Premium removes these limits and adds current position, company and total experience to search results.</p></details>
+      <details><summary>How do career paths work?</summary><p>Pick a job family, a location and, if you like, an industry. HireMate searches LinkedIn with your own session, reads up to 50 profiles per run at a human pace and places every role on an eight-level ladder from intern to C-level; your saved candidates are added too. Run more scans to grow the benchmark — people already in it are skipped.</p></details>
+      <details><summary>What does a market scan store?</summary><p>Only anonymous career data: job titles mapped to a job family and level, with their dates. No names, photos or profile links are kept, scanned people are not added to your candidates, and everything stays in your browser.</p></details>
+      <details><summary>What do I get for free?</summary><p>One-click save and Excel export, the dashboard, talent map and a career ladder from your saved candidates are free. The free plan lets you extract 10 search results per run and up to 50 per day, includes up to 3 projects and a preview of the top 3 people most likely to move. Premium removes these limits and adds career-path market scans with insights, plus current position, company and total experience in search results.</p></details>
       <details><summary>Can I cancel Premium?</summary><p>Yes, anytime from the link in your receipt email. You keep Premium until the end of the period you paid for. See our <a href="{{P}}refund.html">Refund Policy</a>.</p></details>
     </div>
   </div>
@@ -353,7 +384,7 @@ f'''<section class="hero">
 <section>
   <div class="wrap">
     <div class="cta">
-      <div><h2>Save your next shortlist in minutes.</h2><p>Free to install. No account needed.</p></div>
+      <div><h2>Export, prioritise and benchmark — in one side panel.</h2><p>Free to install. No account needed.</p></div>
       <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/fmhkmikhenpkemjmddogaildfdnhddfe?utm_source=fastmate.io.vn" target="_blank" rel="noopener">Add HireMate to Chrome</a>
     </div>
   </div>
