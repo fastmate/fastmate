@@ -360,8 +360,8 @@ f'''<section class="hero">
 </section>''', alt='vi/hiremate/index.html')
 
 # ---------------- Legal ----------------
-def legal(path, title, desc, inner):
-    page(path, title + ' — FastMate', desc, f'<article class="legal"><h1>{title}</h1><p class="updated">Last updated: {UPDATED}</p>{inner}</article>', alt='vi/' + path)
+def legal(path, title, desc, inner, updated=UPDATED):
+    page(path, title + ' — FastMate', desc, f'<article class="legal"><h1>{title}</h1><p class="updated">Last updated: {updated}</p>{inner}</article>', alt='vi/' + path)
 
 legal('privacy.html', 'Privacy Policy', 'How FastMate and HireMate handle your data.', '''
 <p>This policy explains how FastMate (“we”, “us”), operated by Fast Mate, handles information in our products, including the HireMate Chrome extension, and on this website.</p>
@@ -373,6 +373,7 @@ legal('privacy.html', 'Privacy Policy', 'How FastMate and HireMate handle your d
 </ul>
 <h2>Information HireMate processes</h2>
 <p>When you open a profile and use HireMate, the extension reads the information shown to you on that page (such as name, profile URL, work history, education and profile photo link) using your own signed-in session, and saves the candidates you choose — together with notes, tags and project statuses you add — in your browser’s local storage. This data never leaves your device unless you export it (for example to an Excel file) or copy it yourself.</p>
+<p><strong>Career-path market scans.</strong> When you start a market scan, HireMate searches LinkedIn with your session and reads up to 50 profiles per run at a human pace. From each profile it keeps only anonymous career data — job titles mapped to a job family and level, with their dates — plus a salted one-way hash of the profile address so the same person is not read twice. Names, photos and profile links of scanned people are not stored, scanned people are not added to your candidates, and this data stays in your browser. You can delete a benchmark at any time.</p>
 <p>You are responsible for how you use and share the candidate information you collect, including complying with applicable data-protection laws (such as GDPR or Vietnam’s Decree 13/2023/ND-CP) and the terms of the websites you use. HireMate includes tools to help: automatic deletion after a retention period you choose, backup and delete-all.</p>
 <h2>Purchases</h2>
 <p>To activate Premium, HireMate sends your license key and a device label (for example “HireMate · Win32”) to Lemon Squeezy’s license service, and re-checks the key every few days so a cancelled or expired subscription returns to the free plan. No candidate data is ever sent.</p>
@@ -381,8 +382,8 @@ legal('privacy.html', 'Privacy Policy', 'How FastMate and HireMate handle your d
 <p>This website is hosted on GitHub Pages. GitHub may log technical data such as IP addresses for security purposes; see GitHub’s privacy statement. We do not use analytics or advertising cookies on this site. Fonts are loaded from Google Fonts.</p>
 <h2>Permissions used by HireMate</h2>
 <ul>
-  <li><strong>Side panel, tabs, scripting, access to linkedin.com</strong> — to read the profile you are viewing and show it in the side panel.</li>
-  <li><strong>Storage / unlimited storage</strong> — to keep your saved candidates on your device.</li>
+  <li><strong>Side panel, scripting, access to linkedin.com</strong> — to read the profile you are viewing, and the search results and profiles you ask HireMate to read (including market scans), and show them in the side panel and dashboard.</li>
+  <li><strong>Storage / unlimited storage</strong> — to keep your saved candidates and anonymous career-path benchmarks on your device.</li>
   <li><strong>Access to api.lemonsqueezy.com</strong> — only to activate and check your Premium license key.</li>
 </ul>
 <h2>Your choices</h2>
@@ -392,7 +393,7 @@ legal('privacy.html', 'Privacy Policy', 'How FastMate and HireMate handle your d
 <h2>Changes</h2>
 <p>We may update this policy. The “last updated” date shows the latest version.</p>
 <h2>Contact</h2>
-<p>Questions? Email <a href="mailto:fastmate.support@gmail.com">fastmate.support@gmail.com</a>.</p>''')
+<p>Questions? Email <a href="mailto:fastmate.support@gmail.com">fastmate.support@gmail.com</a>.</p>''', updated='October 25, 2026')
 
 legal('terms.html', 'Terms of Service', 'Terms for using FastMate products, including HireMate.', '''
 <p>These terms govern your use of FastMate products, including the HireMate Chrome extension and HireMate Premium (the “Service”), provided by Fast Mate (“FastMate”, “we”). By installing or using the Service you agree to these terms.</p>
